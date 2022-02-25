@@ -6,7 +6,7 @@ function MovieInfo({ id }) {
 
   useEffect(() => {
     axios
-      .get(`http://www.omdbapi.com/?i=${id}&apikey=3b9a582e`)
+      .get(`http://www.omdbapi.com/?i=${id}&apikey=${process.env.REACT_APP_API_KEY}`)
       .then((res) => setClickedMovie(res.data));
   }, [id]);
 
